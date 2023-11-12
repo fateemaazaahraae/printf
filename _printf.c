@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	b spe[] = {
-		{"%s", print_string}, {"%c", print_char}, {"%%", print_sign}
+		{"%s", print_string}, {"%c", print_char}, {"%%", print_sign}, {NULL, NULL}
 	};
 	va_list args;
 	int i, j, len, checker;
