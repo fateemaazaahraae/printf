@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 /**
- * struct format - struct
+ * struct a - struct
  * @specefier: the format specefier
  * @f: pointer to function
  *
