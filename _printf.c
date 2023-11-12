@@ -10,12 +10,8 @@
 
 int _printf(const char *format, ...)
 {
-	b spe[] = {
-		{"%s", print_string}, {"%c", print_char}, {"%i", print_int},
-		{"%d", print_d}, {"%%", print_sign}, {"%b", print_binary},
-		{"%u", print_unsigned}, {"%o", print_octal}, {"%x", print_hexa_low},
-		{"%X", print_hexa_upp}, {"%S", print_String}, {"%p", print_add},
-		{"%r", print_rev_str}, {"%R", print_ro13}
+	struct a spe[] = {
+		{"%s", &print_string}, {"%c", &print_char}, {"%%", &print_sign}
 	};
 	va_list args;
 	int i;
@@ -30,7 +26,7 @@ int _printf(const char *format, ...)
 	while (format[i] != '\0')
 	{
 		j = 0;
-		while (j <= 13 && format[i] == spe[j].specefier[0])
+		while (j <= 2 && format[i] == spe[j].specefier[0])
 		{
 			if (format[i + 1] == spe[j].specefier[1])
 			{
