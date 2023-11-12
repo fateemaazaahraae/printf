@@ -21,10 +21,11 @@ typedef struct a
 
 int _printf(const char *format, ...);
 void ft_putchar(char c);
-int print_int(va_list list); 
+int print_int(va_list list);
 int print_string(va_list list);
 int ft_strlen(char *str);
 int print_sign(void);
 int print_char(va_list list);
-
+int print_unsigned(va_list list);
+int print_rev_str(va_list list);
 #endif
