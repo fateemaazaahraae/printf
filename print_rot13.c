@@ -10,28 +10,36 @@
 int print_rot13(va_list list)
 {
 	char *str;
+	char *lol;
+	char *p = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int i, len;
 
 	str = va_arg(list, char *);
-	if (str == NULL)
-		str = "(null)";
-	i = 0;
+	lol = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
 	len = 0;
 	while (str[len] != '\0')
-		len++;
-	while (str[i] != '\0')
 	{
-		if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
+		i = 0;
+		while (i < 52)
 		{
-			str[i] += 13;
-			ft_putchar(str[i]);
+			if (str[len] == p[i])
+			{
+				lol[len] = rot13[i];
+				break;
+			}
+			i++;
 		}
-		else if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'Z'))
-		{
-			str[i] -= 13;
-			ft_putchar(str[i]);
-		}
-		i++;
+		if (str[len] != p[i])
+			lol[len] = str[len];
+		len++;
 	}
+	len = 0;
+	while (lol[len] != '\0')
+	{
+		ft_putchar(lol[len]);
+		len++;
+	}
+	free(lol);
 	return (len);
 }
