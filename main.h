@@ -3,14 +3,20 @@
 
 #include <unistd.h>
 #include <stdarg.h>
-#include <stdio.h>
 #include <stdlib.h>
 
-struct a
+/**
+ * struct a - struct
+ * @specefier: the format specefier
+ * @f: pointer to function
+ *
+ */
+
+typedef struct a
 {
 	char *specefier;
 	int (*f)();
-};
+}	b;
 
 int _printf(const char *format, ...);
 void ft_putchar(char c);

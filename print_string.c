@@ -14,11 +14,12 @@ int print_string(va_list list)
 
 	str = va_arg(list, char *);
 	i = 0;
+	length = 0;
 	if (str == NULL)
 	{
 		str = "(null)";
-		length = ft_strlen(str);
-		while (i < length)
+		length = 6;
+		while (str[i])
 		{
 			ft_putchar(str[i]);
 			i++;
@@ -26,8 +27,8 @@ int print_string(va_list list)
 	}
 	else
 	{
-		length = ft_strlen(str);
-		while (i < length && str[i])
+		length += ft_strlen(str);
+		while (str[i])
 		{
 			ft_putchar(str[i]);
 			i++;
