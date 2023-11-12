@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	struct a spe[] = {
-		{"%s", &print_string}, {"%c", &print_char}, {"%%", &print_sign}
+		{"%s", print_string}, {"%c", print_char}, {"%%", print_sign}
 	};
 	va_list args;
 	int i;
