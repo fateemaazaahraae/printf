@@ -4,11 +4,10 @@
  * ft_putchar - put a char
  * @c: char
  *
- * Return: 1
+ * Return: void
  */
 
-int ft_putchar(char c)
+void ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (1);
 }
