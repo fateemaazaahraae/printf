@@ -30,7 +30,7 @@ int print_string(va_list list)
 		while (i < length)
 		{
 			ft_putchar(str[i]);
-				i++;
+			i++;
 		}
 	}
 	return (length);
