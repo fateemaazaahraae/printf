@@ -27,7 +27,7 @@ int print_string(va_list list)
 	else
 	{
 		length = ft_strlen(str);
-		while (i < length)
+		while (i < length && str[i])
 		{
 			ft_putchar(str[i]);
 			i++;

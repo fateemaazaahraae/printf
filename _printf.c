@@ -14,13 +14,12 @@ int _printf(const char *format, ...)
 		{"%s", print_string}, {"%c", print_char}, {"%%", print_sign}
 	};
 	va_list args;
-	int i;
-	int j;
-	int len;
+	int i, j, len, checker;
 
 	i = 0;
 	va_start(args, format);
 	len = 0;
+	checker = 0;
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	while (format[i] != '\0')
@@ -31,13 +30,18 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == spe[j].specefier[1])
 			{
 				len += spe[j].f(args);
+				checker = 1;
 				i = i + 2;
 			}
 			j++;
 		}
-		ft_putchar(format[i]);
-		len++;
-		i++;
+		if (checker == 0)
+		{
+			ft_putchar(format[i]);
+			len++;
+			i++;
+		}
+		checker = 0;
 	}
 	va_end(args);
 	return (len);
