@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * struct a - struct
@@ -20,6 +21,7 @@ typedef struct a
 
 int _printf(const char *format, ...);
 void ft_putchar(char c);
+int print_int(va_list list); 
 int print_string(va_list list);
 int ft_strlen(char *str);
 int print_sign(void);
