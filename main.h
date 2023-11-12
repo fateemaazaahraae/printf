@@ -28,4 +28,5 @@ int print_sign(void);
 int print_char(va_list list);
 int print_unsigned(va_list list);
 int print_rev_str(va_list list);
+int print_rot13(va_list list);
 #endif
