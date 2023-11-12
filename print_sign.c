@@ -8,6 +8,7 @@
 
 int print_sign(void)
 {
-	ft_putchar('%');
+	ft_putchar(37);
 	return (1);
 }
+

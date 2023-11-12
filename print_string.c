@@ -14,24 +14,20 @@ int print_string(va_list list)
 
 	str = va_arg(list, char *);
 	i = 0;
+	length = 0;
 	if (str == NULL)
 	{
 		str = "(null)";
-		length = ft_strlen(str);
-		while (i < length)
-		{
-			ft_putchar(str[i]);
-			i++;
-		}
+		length = 6;
+		while (str[i])
+			ft_putchar(str[i++]);
 	}
 	else
 	{
-		length = ft_strlen(str);
-		while (i < length)
-		{
-			ft_putchar(str[i]);
-			i++;
-		}
+		length += ft_strlen(str);
+		while (str[i])
+			ft_putchar(str[i++]);
 	}
 	return (length);
 }
+
