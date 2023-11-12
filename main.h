@@ -11,6 +11,9 @@ typedef struct a
 }	b;
 
 int _printf(const char *format, ...);
-int ft_putchar(char c);
+void ft_putchar(char c);
+int print_string(va_list list);
+int print_sign(void);
+int print_char(char c);
 
 #endif
