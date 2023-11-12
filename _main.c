@@ -2,7 +2,6 @@
 
 int main()
 {
-	_printf("%%");
-	_printf("%c", 'f');
+	_printf("%c", 'p');
 	return (0);
 }
