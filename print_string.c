@@ -29,7 +29,7 @@ int print_string(va_list list)
 		length = ft_strlen(str);
 		while (i < length)
 		{
-			ft_putchar(str[i])
+			ft_putchar(str[i]);
 				i++;
 		}
 	}
