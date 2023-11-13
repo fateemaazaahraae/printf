@@ -55,7 +55,7 @@ int print_hexa_upper(va_list list)
 	unsigned long int num;
 	int length;
 
-	num = va_arg(list, int);
+	num = va_arg(list, unsigned int);
 	put_HEX(num);
 	length = len_HEX(num);
 	return (length);

@@ -55,7 +55,7 @@ int print_hexa_lower(va_list list)
 	unsigned long int num;
 	int length;
 
-	num = va_arg(list, int);
+	num = va_arg(list, unsigned int);
 	put_hex(num);
 	length = len_hex(num);
 	return (length);
