@@ -27,7 +27,7 @@ void put_bit(unsigned int nb)
 	if (nb == 0)
 		return;
 	put_bit(nb / 2);
-	_putchar(nb % 2 + '0');
+	ft_putchar(nb % 2 + '0');
 }
 
 /**
@@ -44,7 +44,7 @@ int print_bit(va_list args)
 	num = va_arg(args, int);
 	if (num == 0)
 	{
-		_putchar('0');
+		ft_putchar('0');
 		return (1);
 	}
 	put_bit(num);
