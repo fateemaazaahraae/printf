@@ -2,32 +2,32 @@
 
 /**
  * bit_len - number of digits of the binary representation of a number.
- * @num: thr number.
+ * @nb: number.
  *
  * Return: the number of a digits.
  */
-int bit_len(unsigned int num)
+int bit_len(unsigned int nb)
 {
-	int len = 0;
+	int length = 0;
 
-	while (num != 0)
+	while (nb != 0)
 	{
-		len++;
-		num /= 2;
+		length++;
+		nb /= 2;
 	}
-	return (len);
+	return (length);
 }
 
 /**
  * put_bit - print decimal number in binary.
- * @num: the number.
+ * @nb: the number.
  */
-void put_bit(unsigned int num)
+void put_bit(unsigned int nb)
 {
-	if (num == 0)
+	if (nb == 0)
 		return;
-	put_bit(num / 2);
-	_putchar(num % 2 + '0');
+	put_bit(nb / 2);
+	_putchar(nb % 2 + '0');
 }
 
 /**
