@@ -12,12 +12,17 @@ int print_Str(va_list list)
 	char *str;
 	char *hexa;
 	int i;
+	int check;
 
 	str = va_arg(list, char *);
 	hexa = "0123456789ABCDEF";
 	if (str == NULL)
+	{
+		str = "(null)";
 		return (-1);
+	}
 	i = 0;
+	check = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] >= 32 && str[i] < 127)
@@ -27,8 +32,11 @@ int print_Str(va_list list)
 			write(1, "\\x", 2);
 			ft_putchar(hexa[(unsigned char)str[i] / 16]);
 			ft_putchar(hexa[(unsigned char)str[i] % 16]);
+			check = 1;
 		}
 		i++;
 	}
-	return (i + 2);
+	if (check == 1)
+		i += 2;
+	return (i);
 }
