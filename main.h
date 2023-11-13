@@ -32,9 +32,6 @@ int print_rot13(va_list list);
 int print_Str(va_list list);
 int print_hexa_lower(va_list list);
 int print_hexa_upper(va_list list);
-<<<<<<< HEAD
-=======
 int print_bit(va_list list);
->>>>>>> 3197a0fb0276a2866ff7d96b5e04da23491bcfea
 int print_octal(va_list list);
 #endif
