@@ -17,10 +17,7 @@ int print_Str(va_list list)
 	str = va_arg(list, char *);
 	hexa = "0123456789ABCDEF";
 	if (str == NULL)
-	{
 		str = "(null)";
-		return (-1);
-	}
 	i = 0;
 	check = 0;
 	while (str[i] != '\0')
