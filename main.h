@@ -20,7 +20,7 @@ typedef struct a
 }	b;
 
 int _printf(const char *format, ...);
-void ft_putchar(char c);
+int ft_putchar(char c);
 int print_int(va_list list);
 int print_string(va_list list);
 int ft_strlen(char *str);
@@ -32,4 +32,6 @@ int print_rot13(va_list list);
 int print_Str(va_list list);
 int print_hexa_lower(va_list list);
 int print_hexa_upper(va_list list);
+int print_bit(va_list list);
+int print_octal(va_list list);
 #endif

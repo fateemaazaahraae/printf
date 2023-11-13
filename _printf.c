@@ -14,7 +14,8 @@ int _printf(const char *format, ...)
 		{"%s", print_string}, {"%c", print_char}, {"%%", print_sign},
 		{"%i", print_int}, {"%d", print_int}, {"%u", print_unsigned},
 		{"%S", print_Str}, {"%x", print_hexa_lower}, {"%X", print_hexa_upper},
-		{"%r", print_rev_str}, {"%R", print_rot13}, {NULL, NULL}
+		{"%r", print_rev_str}, {"%R", print_rot13}, {"%b", print_bit},
+		{"%o", print_octal}, {NULL, NULL}
 	};
 	va_list args;
 	int i, j, len, checker;
@@ -28,7 +29,7 @@ int _printf(const char *format, ...)
 	while (format[i] != '\0')
 	{
 		j = 0;
-		while (j <= 10 && format[i] == spe[j].specefier[0])
+		while (j <= 12 && format[i] == spe[j].specefier[0])
 		{
 			if (format[i + 1] == spe[j].specefier[1])
 			{
