@@ -16,7 +16,11 @@ int print_rot13(va_list list)
 	int i, len;
 
 	str = va_arg(list, char *);
+	if (str == NULL)
+		return (-1);
 	lol = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (lol == NULL)
+		return (-1);
 	len = 0;
 	while (str[len] != '\0')
 	{
@@ -30,7 +34,7 @@ int print_rot13(va_list list)
 			}
 			i++;
 		}
-		if (str[len] != p[i])
+		if (i == 52)
 			lol[len] = str[len];
 		len++;
 	}
