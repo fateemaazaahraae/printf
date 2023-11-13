@@ -1,39 +1,40 @@
 #include "main.h"
 
 /**
- * print_Str - prints string and non printable characters in hexadecimal
- * @list: argument
+ * print_Str - prints the string.
+ * @args: list of arguments.
  *
- * Return: length of the string
+ * Return: length of the string.
  */
-
-int print_Str(va_list list)
+int print_Str(va_list args)
 {
-	char *str;
-	char *hexa;
-	int i;
-	int check;
+	char *str = va_arg(args, char *);
+	int i = 0;
+	int len = 0;
 
-	str = va_arg(list, char *);
-	hexa = "0123456789ABCDEF";
 	if (str == NULL)
-		str = "(null)";
-	i = 0;
-	check = 0;
-	while (str[i] != '\0')
 	{
-		if (str[i] >= 32 && str[i] < 127)
-			ft_putchar(str[i]);
-		else
+		return (0);
+	}
+	while (str[i])
+	{
+		if (str[i] < 32 || str[i] >= 127)
 		{
 			write(1, "\\x", 2);
-			ft_putchar(hexa[(unsigned char)str[i] / 16]);
-			ft_putchar(hexa[(unsigned char)str[i] % 16]);
-			check = 1;
+			if (str[i] < 16)
+			{
+				_putchar('0');
+				len++;
+			}
+			putHEX(str[i]);
+			len += hexlen(str[i]) + 2;
+		}
+		else
+		{
+			_putchar(str[i]);
+			len++;
 		}
 		i++;
 	}
-	if (check == 1)
-		i += 2;
-	return (i);
+	return (len);
 }
