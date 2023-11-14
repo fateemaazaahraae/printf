@@ -2,13 +2,13 @@
 
 /**
  * print_Str - prints the string.
- * @args: list of arguments.
+ * @list: list of arguments.
  *
  * Return: length of the string.
  */
-int print_Str(va_list args)
+int print_Str(va_list list)
 {
-	char *str = va_arg(args, char *);
+	char *str = va_arg(list, char *);
 	int i = 0;
 	int len = 0;
 
