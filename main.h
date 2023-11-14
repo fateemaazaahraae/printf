@@ -30,6 +30,8 @@ int print_unsigned(va_list list);
 int print_rev_str(va_list list);
 int print_rot13(va_list list);
 int print_Str(va_list list);
+int len_HEX(unsigned long int num);
+void put_HEX(unsigned long int nb);
 int print_hexa_lower(va_list list);
 int print_hexa_upper(va_list list);
 int print_bit(va_list list);
